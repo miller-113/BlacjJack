@@ -19,7 +19,7 @@ class AbstractPlayer(abc.ABC):
         for card in self.cards:
             if self.full_points > 21 and card.points == 11:
                 self.full_points -= 10
-                print('\nAce replaced 11 points to 1')
+                # print('\nAce replaced 11 points to 1')
 
     def take_card(self, card):
         self.cards.append(card)
@@ -49,12 +49,12 @@ class Player(AbstractPlayer):
 
     def change_bet(self, max_bet, min_bet):
         while True:
-            value = int(input('Make your bet: '))
+            value = int(input('Make your bet:\n>> '))
             if max_bet > value > min_bet:
                 self.bet = value
                 self.money -= self.bet
                 break
-        print('Your bet is: ', self.bet)
+        print('Your bet is: ', self.bet, 'chips')
 
     def ask_card(self):
         choice = input(MESSAGES.get('ask_card'))

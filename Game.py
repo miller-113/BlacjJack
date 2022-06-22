@@ -84,7 +84,7 @@ class Game:
                     if player.full_points > 21:
                         # or isinstance(player, Player.Player):
                         self.remove_player(player)
-                    break
+                        break
 
                 if isinstance(player, Player.Player):
                     player.print_cards()
